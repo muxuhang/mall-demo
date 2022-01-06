@@ -9,13 +9,13 @@ import {
 
 /* eslint-disable */
 export const RootNavigation = {
-  navigate(_name: string, _params?: any) {},
-  goBack() {},
-  resetRoot(_state?: PartialState<NavigationState> | NavigationState) {},
+  navigate(_name: string, _params?: any) { },
+  goBack() { },
+  resetRoot(_state?: PartialState<NavigationState> | NavigationState) { },
   getRootState(): NavigationState {
     return {} as any
   },
-  dispatch(_action: NavigationAction) {},
+  dispatch(_action: NavigationAction) { },
 }
 /* eslint-enable */
 
