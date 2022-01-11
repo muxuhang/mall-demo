@@ -1,18 +1,18 @@
 {
   "home": {
-    "title": "home"
+    "title": "首页"
   },
   "shopcar": {
-    "title": "shopcar"
+    "title": "购物车"
   },
   "classify": {
-    "title": "classify"
+    "title": "分类"
   },
   "me": {
-    "title": "me"
+    "title": "我的"
   },
   "common": {
-    "ok": "OK!",
+    "ok": "OK",
     "cancel": "Cancel",
     "back": "Back"
   }

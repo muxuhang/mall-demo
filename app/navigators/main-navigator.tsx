@@ -49,7 +49,7 @@ export function MainNavigator() {
       }}
     >
       {/* <Stack.Screen name="tabbar" component={TabbarScreen} /> */}
-      <Stack.Screen name="tabbar" options={options} component={TabbarNavigator} />
+      <Stack.Screen name="tabbar" options={{...options,headerShown:false}} component={TabbarNavigator} />
     </Stack.Navigator>
   )
 }

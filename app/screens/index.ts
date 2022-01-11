@@ -1,6 +1,3 @@
-export * from "./welcome/welcome-screen"
-export * from "./demo/demo-screen"
-export * from "./demo/demo-list-screen"
 export * from "./error/error-boundary"
 // export other screens here
 export * from "./login-screen/login-screen"
@@ -9,3 +6,4 @@ export * from "./home-screen/home-screen"
 export * from "./shopcar-screen/shopcar-screen"
 export * from "./classify-screen/classify-screen"
 export * from "./me-screen/me-screen"
+export * from "./settings-screen/settings-screen"

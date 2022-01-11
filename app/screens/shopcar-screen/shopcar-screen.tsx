@@ -20,7 +20,7 @@ export const ShopcarScreen = observer(function ShopcarScreen() {
   // Pull in navigation via hook
   // const navigation = useNavigation()
   return (
-    <Screen style={ROOT} preset="scroll">
+    <Screen style={ROOT} unsafe>
       <Text preset="header" text="shopcarScreen" />
     </Screen>
   )

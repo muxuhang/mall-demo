@@ -1,27 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { observer } from "mobx-react-lite"
-import { ViewStyle } from "react-native"
-import { Screen, Text } from "../../components"
-// import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
-import { color } from "../../theme"
-
-const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
-  flex: 1,
-}
-
+import { StyleSheet, useColorScheme, View } from "react-native"
+import { Screen } from "../../components"
 export const HomeScreen = observer(function HomeScreen() {
-  // Pull in one of our MST stores
-  // const { someStore, anotherStore } = useStores()
-  // OR
-  // const rootStore = useStores()
-
-  // Pull in navigation via hook
-  // const navigation = useNavigation()
+  useEffect(() => {
+    // const colorScheme = useColorScheme();
+    console.log('colorScheme')
+  }, [])
   return (
-    <Screen style={ROOT} preset="scroll">
-      <Text preset="header" text="homeScreen" />
+    <Screen style={styles.ROOT}>
+      <View style={{ height: 100, width: 100, backgroundColor: 'red' }}></View>
     </Screen>
   )
+})
+const styles = StyleSheet.create({
+  ROOT: {
+
+  }
 })
