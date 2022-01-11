@@ -1,15 +1,17 @@
 import React, { useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import { StyleSheet, useColorScheme, View } from "react-native"
-import { Screen } from "../../components"
+import { Screen, Text } from "../../components"
+import { useTheme } from "@react-navigation/native"
+import Banner from "./banner"
+// 亮色暗色模式切换
+// 中英文切换
 export const HomeScreen = observer(function HomeScreen() {
-  useEffect(() => {
-    // const colorScheme = useColorScheme();
-    console.log('colorScheme')
-  }, [])
+  const colorScheme = useColorScheme()
   return (
-    <Screen style={styles.ROOT}>
-      <View style={{ height: 100, width: 100, backgroundColor: 'red' }}></View>
+    <Screen style={styles.ROOT} unsafe>
+      <Banner />
+
     </Screen>
   )
 })

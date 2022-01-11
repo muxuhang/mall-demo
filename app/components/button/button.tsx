@@ -26,7 +26,11 @@ export function Button(props: ButtonProps) {
   const textStyle = textPresets[preset] || textPresets.primary
   const textStyles = [textStyle, textStyleOverride]
 
-  const content = children || <Text tx={tx} text={text} style={textStyles} />
+  const content = (
+    typeof children =='string'? 
+  <Text tx={tx} text={children} style={textStyles} />:
+  children)|| 
+  <Text tx={tx} text={text} style={textStyles} />
 
   return (
     <TouchableOpacity style={viewStyles} {...rest}>

@@ -1,3 +1,4 @@
+require("../app/components/input/input.story")
 require("../app/components/text/text.story")
 require("../app/components/auto-image/auto-image.story")
 require("../app/components/button/button.story")

@@ -7,10 +7,11 @@
 import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { LoadingScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import { MainNavigator } from "./main-navigator"
+import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack"
+import { AuthNavigator } from "./auth-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -31,20 +32,24 @@ export type NavigatorParamList = {
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createNativeStackNavigator<NavigatorParamList>()
+const Stack = createStackNavigator<NavigatorParamList>()
 const AppStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        gestureEnabled: false
+        gestureEnabled: false,
+        cardStyleInterpolator: CardStyleInterpolators.forNoAnimation
       }}
       initialRouteName="loading"
     >
-      <Stack.Screen name="loading" options={{ headerShown: false }} component={LoadingScreen} />
+      <Stack.Screen
+        name="loading"
+        options={{ headerShown: false }}
+        component={LoadingScreen} />
       <Stack.Screen
         name="authStack"
-        component={MainNavigator}
+        component={AuthNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -60,11 +65,12 @@ interface NavigationProps extends Partial<React.ComponentProps<typeof Navigation
 
 export const AppNavigator = (props: NavigationProps) => {
   const colorScheme = useColorScheme()
+  console.tron.log(colorScheme)
   useBackButtonHandler(canExit)
   return (
     <NavigationContainer
       ref={navigationRef}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      theme={colorScheme == "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
       <AppStack />

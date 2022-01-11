@@ -10,7 +10,10 @@ export const icons = {
   classify: require("./classify.png"),
   classify_s: require("./classify_s.png"),
   me: require("./me.png"),
-  me_s: require("./me_s.png")
+  me_s: require("./me_s.png"),
+
+  wx: require("./wx.png")
+
 
 }
 

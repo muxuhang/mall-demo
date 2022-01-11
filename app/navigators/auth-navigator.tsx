@@ -26,7 +26,7 @@ export type PrimaryParamList = {
 }
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createStackNavigator<PrimaryParamList>()
-export function MainNavigator() {
+export function AuthNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
