@@ -3206,6 +3206,11 @@
   resolved "https://registry.npmmirror.com/@types/braces/download/@types/braces-3.0.1.tgz#5a284d193cfc61abb2e5a50d36ebbc50d942a32b"
   integrity sha1-WihNGTz8Yauy5aUNNuu8UNlCoys=
 
+"@types/events@*":
+  version "3.0.0"
+  resolved "https://registry.npmmirror.com/@types/events/download/@types/events-3.0.0.tgz?cache=0&sync_timestamp=1637266062882&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fevents%2Fdownload%2F%40types%2Fevents-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
+  integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
+
 "@types/glob-base@^0.3.0":
   version "0.3.0"
   resolved "https://registry.npmmirror.com/@types/glob-base/download/@types/glob-base-0.3.0.tgz?cache=0&sync_timestamp=1637280950143&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fglob-base%2Fdownload%2F%40types%2Fglob-base-0.3.0.tgz#a581d688347e10e50dd7c17d6f2880a10354319d"
@@ -3408,6 +3413,13 @@
     "@types/react" "*"
     "@types/reactcss" "*"
 
+"@types/react-native@*":
+  version "0.66.11"
+  resolved "https://registry.npmmirror.com/@types/react-native/download/@types/react-native-0.66.11.tgz#3d138275fe9cca3b8efad990b1bee08078c3ff4d"
+  integrity sha512-DFuNMhRuyKMbJrI/s3rIuM5io+tIOK4Iq9oMzatWX5bIgfjZM86X1aA/epE0ipw1aFaoHKermK3fLG1bqFzzDQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@0.63.40":
   version "0.63.40"
   resolved "https://registry.npmmirror.com/@types/react-native/download/@types/react-native-0.63.40.tgz#66b11824a6aadb0dde0db87bd8aff58165c7a8f8"
@@ -3448,7 +3460,7 @@
 "@types/react@16.14.0":
   version "16.9.56"
   resolved "https://registry.npmmirror.com/@types/react/download/@types/react-16.9.56.tgz#ea25847b53c5bec064933095fc366b1462e2adf0"
-  integrity sha1-6iWEe1PFvsBkkzCV/DZrFGLirfA=
+  integrity sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -13749,6 +13761,17 @@ react-native-colo-loco@^1.0.0:
   resolved "https://registry.npmmirror.com/react-native-colo-loco/download/react-native-colo-loco-1.0.0.tgz#1576847922bdbf3a9120f81b95f45c682d641491"
   integrity sha512-C8utH0z47xaQU/6Nn4igTi4jGwnyosTi/bXE8zWE2cOk6A3uDpvT0Qj9o8PgX6Lu8PlKxOYVhWDQdZFyp/4Cww==
 
+react-native-dark-mode@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmmirror.com/react-native-dark-mode/download/react-native-dark-mode-0.2.2.tgz#4faa335e36330bfca832ba8b3d2bd84c7b880381"
+  integrity sha1-T6ozXjYzC/yoMrqLPSvYTHuIA4E=
+  dependencies:
+    "@types/events" "*"
+    "@types/react" "*"
+    "@types/react-native" "*"
+    events "^3.0.0"
+    toolkit.ts "^0.0.2"
+
 react-native-flipper@^0.34.0:
   version "0.34.0"
   resolved "https://registry.npmmirror.com/react-native-flipper/download/react-native-flipper-0.34.0.tgz#7df1f38ba5d97a9321125fe0fccbe47d99e6fa1d"
@@ -15880,6 +15903,11 @@ toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/toidentifier/download/toidentifier-1.0.1.tgz?cache=0&sync_timestamp=1636938507570&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftoidentifier%2Fdownload%2Ftoidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+
+toolkit.ts@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.nlark.com/toolkit.ts/download/toolkit.ts-0.0.2.tgz#91bde730e5e6ad1a22146cdaf83f4a52721cf3b2"
+  integrity sha1-kb3nMOXmrRoiFGza+D9KUnIc87I=
 
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"

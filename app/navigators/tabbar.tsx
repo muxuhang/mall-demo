@@ -5,6 +5,8 @@ import { Icon } from "../components"
 import { ClassifyScreen, HomeScreen, ShopcarScreen } from "../screens";
 import { MeScreen } from "../screens/me-screen/me-screen";
 import { translate } from "../i18n";
+import { color } from "../theme";
+import { useColorScheme } from "react-native";
 
 export type PrimaryParamList = {
   home: undefined
@@ -17,7 +19,7 @@ const options = {
 }
 const Tab = createBottomTabNavigator<PrimaryParamList>()
 export function TabbarNavigator() {
-  let textColor = '#8E8E8F'
+  let textColor = color(useColorScheme()).text
   return (
     <Tab.Navigator
       screenOptions={(props: any) => {
@@ -26,12 +28,17 @@ export function TabbarNavigator() {
         return ({
           tabBarLabel: translate(name),
           gestureEnabled: false,
+          tabBarStyle: {
+
+          },
+          tabBarActiveTintColor: color(useColorScheme()).text,
+          tabBarInactiveTintColor: color(useColorScheme()).text2,
           tabBarIcon: ({ color }) => {
             let iconName: any = route.name
             return (
               <Icon
                 icon={color == textColor ? iconName : iconName + '_s'}
-                style={{ height: 24, width: 24 }} />
+                size={25} />
             )
           }
         })

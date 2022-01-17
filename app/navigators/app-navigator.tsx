@@ -65,7 +65,6 @@ interface NavigationProps extends Partial<React.ComponentProps<typeof Navigation
 
 export const AppNavigator = (props: NavigationProps) => {
   const colorScheme = useColorScheme()
-  console.tron.log(colorScheme)
   useBackButtonHandler(canExit)
   return (
     <NavigationContainer

@@ -11,7 +11,7 @@ const RADIUS = 8
  */
 const ROOT: ViewStyle = {
   borderWidth: 1,
-  borderColor: color.line,
+  borderColor: color().line,
   padding: spacing[2],
 }
 
@@ -61,7 +61,7 @@ export const PRESETS = {
    */
   clear: {
     ...ROOT,
-    borderColor: color.transparent,
+    borderColor: color().transparent,
   },
 }
 

@@ -1,5 +1,6 @@
 import * as React from "react"
-import { TouchableOpacity } from "react-native"
+import { TouchableOpacity, useColorScheme } from "react-native"
+import { color } from "../../theme"
 import { Text } from "../text/text"
 import { viewPresets, textPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
@@ -24,13 +25,16 @@ export function Button(props: ButtonProps) {
   const viewStyle = viewPresets[preset] || viewPresets.primary
   const viewStyles = [viewStyle, styleOverride]
   const textStyle = textPresets[preset] || textPresets.primary
-  const textStyles = [textStyle, textStyleOverride]
+  const textStyles = [preset == 'link' ? {
+    color: color(useColorScheme()).text
+  } : {},
+    textStyle, textStyleOverride]
 
   const content = (
-    typeof children =='string'? 
-  <Text tx={tx} text={children} style={textStyles} />:
-  children)|| 
-  <Text tx={tx} text={text} style={textStyles} />
+    typeof children == 'string' ?
+      <Text tx={tx} text={children} style={textStyles} /> :
+      children) ||
+    <Text tx={tx} text={text} style={textStyles} />
 
   return (
     <TouchableOpacity style={viewStyles} {...rest}>

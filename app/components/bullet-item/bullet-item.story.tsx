@@ -9,7 +9,7 @@ declare let module
 
 const VIEWSTYLE = {
   flex: 1,
-  backgroundColor: color.storybookDarkBg,
+  backgroundColor: color().storybookDarkBg,
   borderWidth: 5,
 }
 
@@ -23,7 +23,7 @@ storiesOf("Bullet Item", module)
       <UseCase
         noPad
         text="with view wrapper"
-        usage={`backgroundColor: ${color.storybookDarkBg} (color.storybookDarkBg)`}
+        usage={`backgroundColor: ${color().storybookDarkBg} (color.storybookDarkBg)`}
       >
         <View style={VIEWSTYLE}>
           <BulletItem text="The default Bullet Item text" />

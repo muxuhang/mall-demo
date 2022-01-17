@@ -7,7 +7,6 @@ import dp2px from "../../utils/dp2px"
  */
 const BASE: TextStyle = {
   fontFamily: typography.primary,
-  color: color.text,
   fontSize: dp2px(30),
 }
 
@@ -35,12 +34,12 @@ export const presets = {
   /**
    * Field labels that appear on forms above the inputs.
    */
-  fieldLabel: { ...BASE, fontSize: dp2px(26), color: color.dim } as TextStyle,
+  fieldLabel: { ...BASE, fontSize: dp2px(26), color: color().dim } as TextStyle,
 
   /**
    * A smaller piece of secondary information.
    */
-  secondary: { ...BASE, fontSize: dp2px(18), color: color.dim } as TextStyle,
+  secondary: { ...BASE, fontSize: dp2px(18), color: color().dim } as TextStyle,
 }
 
 /**

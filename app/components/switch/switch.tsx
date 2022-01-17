@@ -12,8 +12,8 @@ const ON_POSITION = WIDTH - THUMB_SIZE - MARGIN
 const BORDER_RADIUS = (THUMB_SIZE * 3) / 4
 
 // colors
-const ON_COLOR = color.primary
-const OFF_COLOR = color.palette.offWhite
+const ON_COLOR = color().primary
+const OFF_COLOR = color().palette.offWhite
 const BORDER_ON_COLOR = ON_COLOR
 const BORDER_OFF_COLOR = "rgba(0, 0, 0, 0.1)"
 
@@ -26,7 +26,7 @@ const TRACK = {
   width: WIDTH,
   borderRadius: BORDER_RADIUS,
   borderWidth: MARGIN / 2,
-  backgroundColor: color.background,
+  backgroundColor: color().background,
 }
 
 // the thumb always has these props
@@ -37,7 +37,7 @@ const THUMB: ViewStyle = {
   borderColor: BORDER_OFF_COLOR,
   borderRadius: THUMB_SIZE / 2,
   borderWidth: MARGIN / 2,
-  backgroundColor: color.background,
+  backgroundColor: color().background,
   shadowColor: BORDER_OFF_COLOR,
   shadowOffset: { width: 1, height: 2 },
   shadowOpacity: 1,

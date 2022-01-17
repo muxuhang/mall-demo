@@ -5,7 +5,7 @@
  * You'll likely spend most of your time in this file.
  */
 import React from "react"
-import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack"
+import { CardStyleInterpolators, createStackNavigator, StackNavigationProp } from "@react-navigation/stack"
 import { translate } from "../i18n"
 import { color } from "../theme"
 import { TabbarNavigator } from "./tabbar"
@@ -22,11 +22,13 @@ import { TabbarNavigator } from "./tabbar"
  *   https://reactnavigation.org/docs/params/
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
-export type PrimaryParamList = {
+export type MainParamList = {
   tabbar: undefined
 }
+export type MainProp = StackNavigationProp<MainParamList>;
+
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createStackNavigator<PrimaryParamList>()
+const Stack = createStackNavigator<MainParamList>()
 const options = {
   headerShown: true,
   headerBackTitle: ' ',
@@ -35,7 +37,7 @@ const options = {
     opacity: 0.6
   },
   headerStyle: {
-    backgroundColor: color.background,
+    backgroundColor: color().background,
     borderBottomWidth: 0,
     shadowOpacity: 0
   }
@@ -48,7 +50,7 @@ export function MainNavigator() {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
       }}
     >
-      <Stack.Screen name="tabbar" options={{...options,headerShown:false}} component={TabbarNavigator} />
+      <Stack.Screen name="tabbar" options={{ ...options, headerShown: false }} component={TabbarNavigator} />
     </Stack.Navigator>
   )
 }

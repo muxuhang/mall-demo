@@ -45,4 +45,6 @@ export interface ScreenProps {
   keyboardShouldPersistTaps?: "handled" | "always" | "never"
 
   edges?: Array<'top' | 'left' | 'bottom' | 'right'>
+
+  colorScheme?: 'dark' | 'light'
 }

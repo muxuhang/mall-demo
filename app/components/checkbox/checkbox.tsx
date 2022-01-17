@@ -18,14 +18,14 @@ const OUTLINE: ViewStyle = {
   justifyContent: "center",
   alignItems: "center",
   borderWidth: 1,
-  borderColor: color.primaryDarker,
+  borderColor: color().primaryDarker,
   borderRadius: 1,
 }
 
 const FILL: ViewStyle = {
   width: DIMENSIONS.width - 4,
   height: DIMENSIONS.height - 4,
-  backgroundColor: color.primary,
+  backgroundColor: color().primary,
 }
 
 const LABEL: TextStyle = { paddingLeft: spacing[2] }

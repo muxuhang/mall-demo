@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Text as ReactNativeText } from "react-native"
+import { Text as ReactNativeText, useColorScheme } from "react-native"
 import { presets } from "./text.presets"
 import { TextProps } from "./text.props"
 import { translate } from "../../i18n"
+import { color } from "../../theme"
 
 /**
  * For your text displaying needs.
@@ -10,6 +11,7 @@ import { translate } from "../../i18n"
  * This component is a HOC over the built-in React Native one.
  */
 export function Text(props: TextProps) {
+  const colorScheme = useColorScheme()
   // grab the props
   const { preset = "default", tx, txOptions, text, children, style: styleOverride, ...rest } = props
 
@@ -18,7 +20,7 @@ export function Text(props: TextProps) {
   const content = i18nText || text || children
 
   const style = presets[preset] || presets.default
-  const styles = [style, styleOverride]
+  const styles = [style, { color: color(colorScheme).text }, styleOverride]
 
   return (
     <ReactNativeText {...rest} style={styles}>

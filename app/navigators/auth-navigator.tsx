@@ -5,9 +5,8 @@
  * You'll likely spend most of your time in this file.
  */
 import React from "react"
-import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack"
-import { color } from "../theme"
-import { LoginScreen } from "../screens"
+import { CardStyleInterpolators, createStackNavigator, StackNavigationProp } from "@react-navigation/stack"
+import { ForgotPassScreen, LoginScreen, RegisterScreen } from "../screens"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -21,11 +20,14 @@ import { LoginScreen } from "../screens"
  *   https://reactnavigation.org/docs/params/
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
-export type PrimaryParamList = {
+export type AuthParamList = {
   login: undefined
+  register: undefined
+  forgotPass: undefined
 }
+export type AuthProp = StackNavigationProp<AuthParamList>;
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createStackNavigator<PrimaryParamList>()
+const Stack = createStackNavigator<AuthParamList>()
 export function AuthNavigator() {
   return (
     <Stack.Navigator
@@ -35,6 +37,8 @@ export function AuthNavigator() {
       }}
     >
       <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Screen name="register" component={RegisterScreen} />
+      <Stack.Screen name="forgotPass" component={ForgotPassScreen} />
     </Stack.Navigator>
   )
 }

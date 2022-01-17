@@ -12,10 +12,10 @@ const CONTAINER: ViewStyle = {
 // the base styling for the TextInput
 const INPUT: TextStyle = {
   fontFamily: typography.primary,
-  color: color.text,
+  color: color().text,
   minHeight: 44,
   fontSize: 18,
-  backgroundColor: color.palette.white,
+  backgroundColor: color().palette.white,
 }
 
 // currently we have no presets, but that changes quickly when you build your app.
@@ -87,8 +87,8 @@ export function TextField(props: TextFieldProps) {
       <Text preset="fieldLabel" tx={labelTx} text={label} />
       <TextInput
         placeholder={actualPlaceholder}
-        placeholderTextColor={color.palette.lighterGrey}
-        underlineColorAndroid={color.transparent}
+        placeholderTextColor={color().palette.lighterGrey}
+        underlineColorAndroid={color().transparent}
         {...rest}
         style={inputStyles}
         ref={forwardedRef}

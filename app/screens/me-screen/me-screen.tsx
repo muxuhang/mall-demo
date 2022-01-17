@@ -1,6 +1,6 @@
 import React from "react"
 import { observer } from "mobx-react-lite"
-import { ViewStyle } from "react-native"
+import { Switch, useColorScheme, ViewStyle } from "react-native"
 import { Button, Screen, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
@@ -17,7 +17,11 @@ export const MeScreen = observer(function MeScreen() {
   // const navigation = useNavigation()
   return (
     <Screen style={main.ROOT}>
-      <Button text="设置"></Button>
+      <Button text="设置"
+       onPress={()=>{
+        useColorScheme()
+       }}></Button>
+       <Switch></Switch>
     </Screen>
   )
 })

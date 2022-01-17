@@ -1,21 +1,16 @@
 import React from "react"
 import { observer } from "mobx-react-lite"
-import { StyleSheet, View, ViewStyle } from "react-native"
+import { StyleSheet, useColorScheme, View } from "react-native"
 import { Button, Icon, Input, Screen, Text } from "../../components"
-// import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
 import { color } from "../../theme"
 import main from "../../theme/main"
 import dp2px from "../../utils/dp2px"
 import { StackActions, useNavigation } from "@react-navigation/native"
+import { translate } from "../../i18n"
+import { AuthProp } from "../../navigators/auth-navigator"
+import AuthBack from "./back"
 export const LoginScreen = observer(function LoginScreen() {
-  // Pull in one of our MST stores
-  // const { someStore, anotherStore } = useStores()
-  // OR
-  // const rootStore = useStores()
-
-  // Pull in navigation via hook
-  const navigation = useNavigation()
+  const navigation = useNavigation<AuthProp>()
   const _login = () => {
     navigation.dispatch(StackActions.replace('mainStack'))
 
@@ -23,16 +18,31 @@ export const LoginScreen = observer(function LoginScreen() {
   const renderForm = () => {
     return (
       <View style={{ margin: dp2px(40) }}>
-        <Input placeholder="请输入手机号" containerStyle={styles.Input}></Input>
-        <Input placeholder="请输入密码" containerStyle={styles.Input}></Input>
+        <Input
+          placeholder={translate('auth.placeholder.phone')}
+          containerStyle={styles.Input}></Input>
+        <Input
+          placeholder={translate('auth.placeholder.password')}
+          containerStyle={styles.Input}></Input>
         <View style={main.FlexRowBox}>
-          <Button preset='link' textStyle={styles.Link}>注册账号</Button>
+          <Button preset='link'
+            textStyle={[styles.Link, {
+              color: color(useColorScheme()).text2
+            }]}
+            onPress={() => navigation.navigate('register')}
+            tx="auth.register.title"></Button>
           <View style={{ flex: 1 }}></View>
-          <Button preset='link' textStyle={styles.Link}>忘记密码</Button>
+          <Button preset='link'
+            textStyle={[styles.Link, {
+              color: color(useColorScheme()).text2
+            }]}
+            onPress={() => navigation.navigate('forgotPass')}
+            tx="auth.forgotPass.title"></Button>
         </View>
         <Button style={{ marginTop: dp2px(100) }}
-          onPress={_login}>登录</Button>
-      </View>
+          onPress={_login}
+          tx="auth.login.title"></Button>
+      </View >
     )
   }
   return (
@@ -42,17 +52,20 @@ export const LoginScreen = observer(function LoginScreen() {
       style={[main.ROOT, {
         flex: 1,
         display: 'flex',
-        paddingVertical:dp2px(30)
+        paddingVertical: dp2px(30)
       }]}>
+      <AuthBack back={false} ></AuthBack>
       <Text preset='header' style={{
         marginBottom: dp2px(60),
         marginHorizontal: dp2px(40)
-      }}>登录</Text>
+      }} tx="auth.login.title"></Text>
       {renderForm()}
       <View style={{ flex: 1 }}></View>
       <View style={{ alignItems: 'center' }}>
-        <Icon icon="wx" size={50}></Icon>
-        <Text preset='fieldLabel'>微信登录</Text>
+        <Icon icon="wx" size={90}></Icon>
+        <Text preset='fieldLabel'
+          style={{ marginTop: dp2px(20) }}
+          tx="auth.login.wx"></Text>
       </View>
     </Screen>
   )
@@ -62,7 +75,6 @@ const styles = StyleSheet.create({
     marginBottom: dp2px(30)
   },
   Link: {
-    color: color.palette.lightBlack,
     fontSize: dp2px(26)
   }
 })

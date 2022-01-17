@@ -1,4 +1,4 @@
-import { ViewStyle, TextStyle } from "react-native"
+import { ViewStyle, TextStyle, useColorScheme } from "react-native"
 import { color, spacing } from "../../theme"
 import dp2px from "../../utils/dp2px"
 
@@ -25,7 +25,7 @@ export const viewPresets: Record<string, ViewStyle> = {
   /**
    * A smaller piece of secondard information.
    */
-  primary: { ...BASE_VIEW, backgroundColor: color.palette.blue } as ViewStyle,
+  primary: { ...BASE_VIEW, backgroundColor: color().palette.blue } as ViewStyle,
 
   /**
    * A button without extras.
@@ -39,10 +39,9 @@ export const viewPresets: Record<string, ViewStyle> = {
 }
 
 export const textPresets: Record<ButtonPresetNames, TextStyle> = {
-  primary: { ...BASE_TEXT, fontSize: dp2px(30), color: color.palette.white } as TextStyle,
+  primary: { ...BASE_TEXT, fontSize: dp2px(30), color: color().palette.white } as TextStyle,
   link: {
     ...BASE_TEXT,
-    color: color.text,
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,

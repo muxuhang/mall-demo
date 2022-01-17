@@ -11,7 +11,7 @@ import { ViewStyle } from "react-native"
 declare let module
 
 const TEXT_STYLE_OVERRIDE = {
-  color: color.storybookTextColor,
+  color: color().storybookTextColor,
 }
 const arrayStyle: ViewStyle[] = [{ borderWidth: 5 }, { borderColor: "#32cd32" }]
 

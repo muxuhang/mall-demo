@@ -11,8 +11,8 @@ const ROOT: ImageStyle = {
 }
 
 export function Icon(props: IconProps) {
-  const { style: styleOverride, icon, size = dp2px(50), containerStyle } = props
-
+  const { style: styleOverride, icon, containerStyle } = props
+  const size = dp2px(props.size || 50)
   return (
     <View style={containerStyle}>
       {icons[icon] ? <Image style={[ROOT, styleOverride, { height: size, width: size }]}
