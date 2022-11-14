@@ -1,7 +1,7 @@
 import React from "react"
 import { observer } from "mobx-react-lite"
 import { StyleSheet, useColorScheme, View } from "react-native"
-import { Button, Icon, Input, Screen, Text } from "../../components"
+import { Button, Icon, Input, Ionicons, Screen, Text } from "../../components"
 import { color } from "../../theme"
 import main from "../../theme/main"
 import dp2px from "../../utils/dp2px"
@@ -62,7 +62,7 @@ export const LoginScreen = observer(function LoginScreen() {
       {renderForm()}
       <View style={{ flex: 1 }}></View>
       <View style={{ alignItems: 'center' }}>
-        <Icon icon="wx" size={90}></Icon>
+        <Ionicons name="logo-twitter" size={90} />
         <Text preset='fieldLabel'
           style={{ marginTop: dp2px(20) }}
           tx="auth.login.wx"></Text>

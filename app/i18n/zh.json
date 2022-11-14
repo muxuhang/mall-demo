@@ -11,6 +11,9 @@
   "me": {
     "title": "我的"
   },
+  "pager": {
+    "title": "222"
+  },
   "auth": {
     "login": {
       "title": "登录",
@@ -35,5 +38,10 @@
     "cancel": "Cancel",
     "back": "Back",
     "getCode": "获取验证码"
+  },
+  "errorScreen": {
+    "title": "代码错误",
+    "friendlySubtitle":"friendlySubtitle",
+    "reset":"reset"
   }
 }

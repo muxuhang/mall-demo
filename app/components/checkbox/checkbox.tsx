@@ -3,29 +3,29 @@ import { TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { Text } from "../text/text"
 import { color, spacing } from "../../theme"
 import { CheckboxProps } from "./checkbox.props"
+import dp2px from "../../utils/dp2px"
 
 const ROOT: ViewStyle = {
   flexDirection: "row",
   paddingVertical: spacing[1],
-  alignSelf: "flex-start",
+  alignItems: 'center'
 }
 
-const DIMENSIONS = { width: 16, height: 16 }
+const DIMENSIONS = { width: dp2px(36), height: dp2px(36) }
 
 const OUTLINE: ViewStyle = {
   ...DIMENSIONS,
-  marginTop: 2, // finicky and will depend on font/line-height/baseline/weather
   justifyContent: "center",
   alignItems: "center",
   borderWidth: 1,
-  borderColor: color().primaryDarker,
+  borderColor: color().palette.blue,
   borderRadius: 1,
 }
 
 const FILL: ViewStyle = {
-  width: DIMENSIONS.width - 4,
-  height: DIMENSIONS.height - 4,
-  backgroundColor: color().primary,
+  width: DIMENSIONS.width - dp2px(10),
+  height: DIMENSIONS.height - dp2px(10),
+  backgroundColor: color().palette.blue,
 }
 
 const LABEL: TextStyle = { paddingLeft: spacing[2] }
@@ -33,15 +33,16 @@ const LABEL: TextStyle = { paddingLeft: spacing[2] }
 export function Checkbox(props: CheckboxProps) {
   const numberOfLines = props.multiline ? 0 : 1
 
-  const rootStyle = [ROOT, props.style]
-  const outlineStyle = [OUTLINE, props.outlineStyle]
-  const fillStyle = [FILL, props.fillStyle]
+  const shape = props.shape == 'round' ? { borderRadius: DIMENSIONS.width } : {}
+  const rootStyle = [ROOT, props.style, shape]
+  const outlineStyle = [OUTLINE, props.outlineStyle, shape]
+  const fillStyle = [FILL, props.fillStyle, shape]
 
   const onPress = props.onToggle ? () => props.onToggle && props.onToggle(!props.value) : null
 
   return (
     <TouchableOpacity
-      activeOpacity={1}
+      activeOpacity={0.6}
       disabled={!props.onToggle}
       onPress={onPress}
       style={rootStyle}

@@ -17,7 +17,7 @@ export const LoadingScreen = observer(function LoadingScreen() {
     _authLogin()
   }, [])
   const _authLogin = () => {
-    const is_login = false
+    const is_login = 1
     if (is_login) {
       navigation.dispatch(StackActions.replace('mainStack'))
     } else {

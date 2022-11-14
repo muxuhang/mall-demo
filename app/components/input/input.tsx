@@ -29,7 +29,7 @@ export function Input(props: InputProps) {
     ]
     }>
       {typeof label == 'string' ? (
-        <Icon icon={label} size={dp2px(40)}></Icon>
+        <Icon icon={label} size={dp2px(40)} />
       ) : label}
       <TextInput
         placeholderTextColor={color(useColorScheme()).text3}

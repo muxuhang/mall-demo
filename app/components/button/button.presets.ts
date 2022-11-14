@@ -10,6 +10,7 @@ const BASE_VIEW: ViewStyle = {
   borderRadius: dp2px(10),
   justifyContent: "center",
   alignItems: "center",
+  minWidth: dp2px(140)
 }
 
 const BASE_TEXT: TextStyle = {

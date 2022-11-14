@@ -9,6 +9,8 @@ import { CardStyleInterpolators, createStackNavigator, StackNavigationProp } fro
 import { translate } from "../i18n"
 import { color } from "../theme"
 import { TabbarNavigator } from "./tabbar"
+import { PagerScreen } from "../screens"
+import { useColorScheme } from "react-native"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -24,6 +26,7 @@ import { TabbarNavigator } from "./tabbar"
  */
 export type MainParamList = {
   tabbar: undefined
+  pager: undefined
 }
 export type MainProp = StackNavigationProp<MainParamList>;
 
@@ -33,7 +36,7 @@ const options = {
   headerShown: true,
   headerBackTitle: ' ',
   headerTitleStyle: {
-    color: '#fff',
+    color: color().palette.blue,
     opacity: 0.6
   },
   headerStyle: {
@@ -43,6 +46,10 @@ const options = {
   }
 }
 export function MainNavigator() {
+  options.headerTitleStyle = {
+    opacity: 0.6,
+    color: color(useColorScheme()).text,
+  }
   return (
     <Stack.Navigator
       screenOptions={{
@@ -51,6 +58,7 @@ export function MainNavigator() {
       }}
     >
       <Stack.Screen name="tabbar" options={{ ...options, headerShown: false }} component={TabbarNavigator} />
+      <Stack.Screen name="pager" options={{ ...options, title: translate('pager.title') }} component={PagerScreen} />
     </Stack.Navigator>
   )
 }

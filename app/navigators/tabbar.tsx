@@ -1,7 +1,7 @@
 import React from "react"
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { Icon } from "../components"
+import { Icon, Ionicons } from "../components"
 import { ClassifyScreen, HomeScreen, ShopcarScreen } from "../screens";
 import { MeScreen } from "../screens/me-screen/me-screen";
 import { translate } from "../i18n";
@@ -35,10 +35,14 @@ export function TabbarNavigator() {
           tabBarInactiveTintColor: color(useColorScheme()).text2,
           tabBarIcon: ({ color }) => {
             let iconName: any = route.name
+            if (iconName == 'shopcar') iconName = 'cart'
+            if (iconName == 'me') iconName = 'person'
+            if (iconName == 'classify') iconName = 'grid'
             return (
-              <Icon
-                icon={color == textColor ? iconName : iconName + '_s'}
-                size={25} />
+              <Ionicons
+                name={iconName}
+                color={color}
+                size={45} />
             )
           }
         })

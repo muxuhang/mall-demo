@@ -12,7 +12,8 @@ export const icons = {
   me: require("./me.png"),
   me_s: require("./me_s.png"),
 
-  wx: require("./wx.png")
+  wx: require("./wx.png"),
+  em: require("./em.png")
 
 
 }

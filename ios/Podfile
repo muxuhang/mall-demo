@@ -23,6 +23,8 @@ target 'mall' do
     :hermes_enabled => podfile_properties['expo.jsEngine'] == 'hermes'
   )
 
+
+
   target 'mallTests' do
     inherit! :complete
     # Pods for testing
